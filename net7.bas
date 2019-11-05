@@ -26,14 +26,14 @@ end sub
 
 sub evonet.recall(resultVec as single ptr,inVec as single ptr)
     dim as single ptr wts=@weights(0)
-	adjust(resultVec,inVec,1.7^depth,veclen)
+	adjust(resultVec,inVec,1.7^depth,veclen) '1.7 to the power of depth. Scaling for switch subroutine
 	for i as ulongint=0 to depth-1
 		   hashflip(resultVec,resultVec,hash+i,veclen)
 		   whtq(resultVec,veclen)
 		   switch(resultVec,wts,veclen):wts+=2*veclen
 	next
 	whtq(resultVec,veclen)
-	hashflip(resultVec,resultVec,not hash,veclen)
+	'hashflip(resultVec,resultVec,not hash,veclen) doesn't help with images,comment out
 end sub
 
 'save using xfile

@@ -117,8 +117,8 @@ dim as ulong rcount
 dim as single work(NETSize-1)
 thr.init()
 do
-  var k=inkey()
-  if (k="t") or (k="T") and not recall then
+  var k=lcase(inkey())
+  if (k="t") and not recall then
     if training then
        thr.stopTraining()
     else
@@ -126,8 +126,8 @@ do
     end if 
     training=not training
   end if
-  if (k="r") or (k="R") and not training then recall=not recall
-  if k=chr(27) then exit do
+  if (k="r") and not training then recall=not recall
+  if k=chr(27) and not (training or recall) then exit do
   if (not training) and (not recall) then
    cls
    print "T to Train, R to Recall"
