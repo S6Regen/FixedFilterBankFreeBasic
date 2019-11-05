@@ -33,7 +33,7 @@ sub evonet.recall(resultVec as single ptr,inVec as single ptr)
 		   switch(resultVec,wts,veclen):wts+=2*veclen
 	next
 	whtq(resultVec,veclen)
-	'hashflip(resultVec,resultVec,not hash,veclen) doesn't help with images,comment out
+	hashflip(resultVec,resultVec,not hash,veclen)
 end sub
 
 'save using xfile
