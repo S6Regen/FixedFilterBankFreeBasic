@@ -7,3 +7,4 @@ Needs SDL installed, may need libtinfo.so.5
 Anyway it should be easy to convert to C if you were motivated. 
 However I would suggest trying to find WHT GPU code and do
 things that way.  
+Information and key ideas: https://ai462qqq.blogspot.com/2019/11/artificial-neural-networks.html 
